@@ -1,0 +1,14 @@
+{
+    "name": "mi-aplicacion",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "chrome-finder": "^1.0.7",
+        "electron": "^16.0.2",
+        "playwright": "^1.15.3",
+        "puppeteer": "^19.7.2"
+    }
+}
