@@ -85,7 +85,7 @@ const secondHalf = pages.slice(halfLength);
             secure: true, // true for 465, false for other ports
             auth: {
                 user: 'abuchgodostrategies@gmail.com', // generated ethereal user
-                pass: 'jevmtixaiwtdehly', // generated ethereal password
+                pass: 'gxvfzizfcqdakymo', // generated ethereal password
             },
         });
 
@@ -97,8 +97,8 @@ const secondHalf = pages.slice(halfLength);
                 console.log('enviando email parte 1');
                 await transporter.sendMail({
                     from: '"screnshoots" <abuchgodostrategies@gmail.com>', // sender address
-                    to: "abuch@godostrategies.com,adribuch1988@gmail.com,trafico.digital@godostrategies.com,mgarciasu@godostrategies.com", // list of receivers
-                    subject: "Screnshots parte 1 TEST ✔", // Subject line
+                    to: "abuch@godostrategies.com,trafico.digital@godostrategies.com,malmirall@godostrategies.com", // list of receivers
+                    subject: "Screnshots parte 1 ✔", // Subject line
                     text: "Screnshots parte 1", // plain text body
                     attachments: [{
                         filename: zipFilename,
@@ -113,8 +113,8 @@ const secondHalf = pages.slice(halfLength);
                 console.log('enviando email parte 2');
                 await transporter.sendMail({
                     from: '"screnshoots" <abuchgodostrategies@gmail.com>', // sender address
-                    to: "abuch@godostrategies.com,adribuch1988@gmail.com,trafico.digital@godostrategies.com,mgarciasu@godostrategies.com", // list of receivers
-                    subject: "Screnshots parte 2 TEST ✔", // Subject line
+                    to: "abuch@godostrategies.com,trafico.digital@godostrategies.com,malmirall@godostrategies.com", // list of receivers
+                    subject: "Screnshots parte 2 ✔", // Subject line
                     text: "Screnshots parte 2", // plain text body
                     attachments: [{
                         filename: zipFilename2,
@@ -159,6 +159,13 @@ const secondHalf = pages.slice(halfLength);
                     const consentButton = await pageObj.$("#didomi-notice-agree-button");
                     if (consentButton) {
                         await consentButton.click();
+                        if (page.name === 'lavanguardia') {
+                            await pageObj.waitForTimeout(5000);
+                            const closeModalLV = await pageObj.$(".drt-club .drt-club-action-close");
+                            if (closeModalLV) {
+                                await closeModalLV.click();
+                            }
+                        }
                     }
                 }
                 await pageObj.waitForTimeout(15000);
