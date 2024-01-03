@@ -85,7 +85,7 @@ const secondHalf = pages.slice(halfLength);
             secure: true, // true for 465, false for other ports
             auth: {
                 user: 'abuchgodostrategies@gmail.com', // generated ethereal user
-                pass: 'gxvfzizfcqdakymo', // generated ethereal password
+                pass: 'azuh cggs tsub aigc', // generated ethereal password
             },
         });
 
@@ -97,7 +97,7 @@ const secondHalf = pages.slice(halfLength);
                 console.log('enviando email parte 1');
                 await transporter.sendMail({
                     from: '"screnshoots" <abuchgodostrategies@gmail.com>', // sender address
-                    to: "abuch@godostrategies.com,trafico.digital@godostrategies.com,malmirall@godostrategies.com", // list of receivers
+                    to: "abuch@godostrategies.com,trafico.digital@gs.godostrategies.com,analytics@godostrategies.com", // list of receivers
                     subject: "Screnshots parte 1 ✔", // Subject line
                     text: "Screnshots parte 1", // plain text body
                     attachments: [{
@@ -113,7 +113,7 @@ const secondHalf = pages.slice(halfLength);
                 console.log('enviando email parte 2');
                 await transporter.sendMail({
                     from: '"screnshoots" <abuchgodostrategies@gmail.com>', // sender address
-                    to: "abuch@godostrategies.com,trafico.digital@godostrategies.com,malmirall@godostrategies.com", // list of receivers
+                    to: "abuch@godostrategies.com,trafico.digital@gs.godostrategies.com,analytics@godostrategies.com", // list of receivers
                     subject: "Screnshots parte 2 ✔", // Subject line
                     text: "Screnshots parte 2", // plain text body
                     attachments: [{
@@ -127,7 +127,6 @@ const secondHalf = pages.slice(halfLength);
             // Sale del proceso
             process.exit();
         })
-
     }
 
     // Hacemos todas las capturas de pantalla
