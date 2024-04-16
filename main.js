@@ -25,6 +25,7 @@ const pages = [
     { name: "larazon", url: "https://www.larazon.es/" }
 ];
 
+
 // Divide el array en dos partes
 const halfLength = Math.ceil(pages.length / 2);
 const firstHalf = pages.slice(0, halfLength);
@@ -74,9 +75,10 @@ const secondHalf = pages.slice(halfLength);
     await saveScreenshotsFolders(output2,screenshotsFolderPart2);
 
     // Enviamos los emails comprimidos
-    await sendEmailWhitZip()
+    //await sendEmailWhitZip()
 
     // Enviamos los emails después de la comprensión
+    /*
     async function sendEmailWhitZip() {
         // Configura el transporter de nodemailer después de la comprensión
         transporter = nodemailer.createTransport({
@@ -85,7 +87,7 @@ const secondHalf = pages.slice(halfLength);
             secure: true, // true for 465, false for other ports
             auth: {
                 user: 'abuchgodostrategies@gmail.com', // generated ethereal user
-                pass: 'azuh cggs tsub aigc', // generated ethereal password
+                pass: '9544 114', // generated ethereal password
             },
         });
 
@@ -97,7 +99,7 @@ const secondHalf = pages.slice(halfLength);
                 console.log('enviando email parte 1');
                 await transporter.sendMail({
                     from: '"screnshoots" <abuchgodostrategies@gmail.com>', // sender address
-                    to: "abuch@godostrategies.com,trafico.digital@gs.godostrategies.com,analytics@godostrategies.com", // list of receivers
+                    to: "abuch@grupogodo.com,trafico.digital@gs.godostrategies.com,analytics@godostrategies.com", // list of receivers
                     subject: "Screnshots parte 1 ✔", // Subject line
                     text: "Screnshots parte 1", // plain text body
                     attachments: [{
@@ -113,7 +115,7 @@ const secondHalf = pages.slice(halfLength);
                 console.log('enviando email parte 2');
                 await transporter.sendMail({
                     from: '"screnshoots" <abuchgodostrategies@gmail.com>', // sender address
-                    to: "abuch@godostrategies.com,trafico.digital@gs.godostrategies.com,analytics@godostrategies.com", // list of receivers
+                    to: "abuch@grupogodo.com,trafico.digital@gs.godostrategies.com,analytics@godostrategies.com", // list of receivers
                     subject: "Screnshots parte 2 ✔", // Subject line
                     text: "Screnshots parte 2", // plain text body
                     attachments: [{
@@ -128,6 +130,7 @@ const secondHalf = pages.slice(halfLength);
             process.exit();
         })
     }
+    */
 
     // Hacemos todas las capturas de pantalla
     async function captureScreenshots(pages, screenshotsFolder) {
@@ -145,7 +148,7 @@ const secondHalf = pages.slice(halfLength);
                 await pageObj.waitForTimeout(5000);
                 // Buscar y hacer clic en el botón de consentimiento si está presente
                 if (page.name === "elpuntavui") {
-                    const consentButton = await pageObj.$('[data-testid="TcfAccept"]');
+                    const consentButton = await pageObj.$('.fc-cta-consent');
                     if (consentButton) {
                         await consentButton.click();
                     }
@@ -154,7 +157,28 @@ const secondHalf = pages.slice(halfLength);
                     if (consentButton) {
                         await consentButton.click();
                     }
-                } else {
+                } else if(page.name === "as") {
+                    const consentButton = await pageObj.$('._1vgtryn');
+                    if (consentButton) {
+                        await consentButton.click();
+                    }
+                } else if(page.name === "elpais"){
+                    const consentButton = await pageObj.$('.pmConsentWall-button');
+                    if (consentButton) {
+                        await consentButton.click();
+                    }
+                }else if(page.name === "marca"){
+                    const consentButton = await pageObj.$('.ue-notice-buttons__btn');
+                    if (consentButton) {
+                        await consentButton.click();
+                    }
+                }else if(page.name === "elmundo"){
+                    const consentButton = await pageObj.$('.ue-notice-buttons__btn');
+                    if (consentButton) {
+                        await consentButton.click();
+                    }
+                }
+                else {
                     const consentButton = await pageObj.$("#didomi-notice-agree-button");
                     if (consentButton) {
                         await consentButton.click();
